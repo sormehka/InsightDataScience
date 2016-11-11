@@ -94,7 +94,7 @@ def main():
         trusted_depth=1
         vertices_index=graph.vertices()
         trusted=np.zeros((len(vertices_index)+1,len(vertices_index)+1))
-        for i in range(0,3000): #len(df_out)):
+        for i in range(0, len(df_out)):
             if not df_out[i][0] in vertices_index or not df_out[i][1] in vertices_index:
                 out_text.write("unverified\n") #if not in vertices, new costumer, unverified
             elif trusted[vertices_index.index(df_out[i][0])][vertices_index.index(df_out[i][1])]==1:
@@ -114,7 +114,7 @@ def main():
     with open(output2,"w") as out_text: #output2-Feature2                                                                         
         trusted_depth=2
         #Trusted matrix from feature 1. The ones are still trusted.
-        for i in range(0,50): #len(df_out)):
+        for i in range(0, len(df_out)):
             if not df_out[i][0] in vertices_index or not df_out[i][1] in vertices_index:
                 out_text.write("unverified\n")
                 
@@ -137,7 +137,7 @@ def main():
            
     with open(output3,"w") as out_text: #output3-Feature3                                                                      
         trusted_depth=4
-        for i in range(0,10): #len(df_out)):
+        for i in range(0, len(df_out)):
             if not df_out[i][0] in vertices_index or not df_out[i][1] in vertices_index:
                 out_text.write("unverified\n")
                 
